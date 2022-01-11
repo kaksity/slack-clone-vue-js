@@ -1,17 +1,25 @@
 <template>
-  <v-app>
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
+  <div>
+    <Header />
+    <div class="app__body">
+      <!-- SideBar -->
+      <Sidebar/>
+      <!-- Router -->
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Header from '@/components/Header.vue'
+import Sidebar from '@/components/Sidebar.vue'
 
 export default defineComponent({
   name: 'App',
-
+  components: {
+    Header,
+    Sidebar
+  },
   data () {
     return {
       //
@@ -19,3 +27,12 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+  * {
+    margin: 0 0 0 0;
+  }
+  body{
+    --slack-color:#3f0f40;
+  }
+</style>
