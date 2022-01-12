@@ -10,18 +10,20 @@
       </div>
         <v-icon class="sidebar__create__icon">mdi-pencil</v-icon>
     </div>
-    <SideBarOption icon='mdi-message' title="Threads"/>
-    <SideBarOption icon='mdi-inbox' title="Mentions & reactions"/>
-    <SideBarOption icon='mdi-message' title="Saved Items"/>
-    <SideBarOption icon='mdi-pencil' title="Channel Browser"/>
-    <SideBarOption icon='mdi-users' title="People & user groups"/>
-    <SideBarOption icon='mdi-dots-grid' title="Apps"/>
-    <SideBarOption icon='mdi-pencil' title="File browser"/>
-    <SideBarOption icon='mdi-pencil' title="Show less"/>
+    <SideBarOption icon='mdi-message-text' title="Threads" to="/threads"/>
+    <SideBarOption icon='mdi-inbox' title="Mentions & reactions" to="/mentions-reactions"/>
+    <SideBarOption icon='mdi-email-open' title="Saved Items" to="/saved-items"/>
+    <SideBarOption icon='mdi-pencil' title="Channel Browser" to="/channel-browser"/>
+    <SideBarOption icon='mdi-account-group' title="People & user groups" to="/people"/>
+    <SideBarOption icon='mdi-dots-grid' title="Apps" to="/apps"/>
+    <SideBarOption icon='mdi-file' title="File browser" to="/file-browser"/>
+    <SideBarOption icon='mdi-chevron-up' title="Show less"/>
     <hr/>
-    <SideBarOption icon="mdi-eye" title="Channels"/>
+    <SideBarOption icon="mdi-chevron-down" title="Channels"/>
     <hr/>
     <SideBarOption icon="mdi-plus" title="Add Channel"/>
+    <SideBarOption title="general"/>
+    <SideBarOption title="general"/>
     <SideBarOption title="general"/>
   </div>
 </template>
@@ -31,6 +33,8 @@
     border-top: 1px solid #49274b;
     max-width: 260px;
     color: white;
+    flex: 0.3;
+    overflow-y: auto;
   }
   .sidebar > hr {
     margin:10px 0;

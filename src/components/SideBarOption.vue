@@ -1,12 +1,27 @@
 <template>
     <div class="sidebaroption">
-        <div class="sidebaroption__icon" v-if="icon">
-            <v-icon>{{icon}}</v-icon> <h3>{{ title }}</h3>
+        <div  v-if="to">
+            <router-link class="sidebaroption__link" :to="to">
+                <div>
+                    <div class="sidebaroption__icon" v-if="icon">
+                        <v-icon>{{icon}}</v-icon> <h3>{{ title }}</h3>
+                    </div>
+                    <div class="sidebaroption__channel" v-else>
+                        <h3># {{ title }}</h3> 
+                    </div>
+                </div>
+            </router-link>
         </div>
-        <div class="sidebaroption__channel" v-else>
-            <h3># {{ title }}</h3> 
+        <div v-else>
+            <div>
+                <div class="sidebaroption__icon" v-if="icon">
+                    <v-icon>{{icon}}</v-icon> <h3>{{ title }}</h3>
+                </div>
+                <div class="sidebaroption__channel" v-else>
+                    <h3># {{ title }}</h3> 
+                </div>
+            </div>
         </div>
-        
     </div>
 </template>
 <style scoped>
@@ -15,6 +30,10 @@
         padding: 10px 0 10px 5px;
         align-items: center;
         cursor: pointer;
+    }
+    .sidebaroption__link{
+        text-decoration: none;
+        color: white;
     }
     .sidebaroption:hover {
         background-color: #340e36;
@@ -40,6 +59,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    props: ['icon', 'title']
+    props: {
+        icon: String,
+        title: String,
+        to: String
+    }
+    
 })
 </script>

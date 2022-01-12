@@ -5,6 +5,7 @@
       <!-- SideBar -->
       <Sidebar/>
       <!-- Router -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -34,5 +35,9 @@ export default defineComponent({
   }
   body{
     --slack-color:#3f0f40;
+  }
+  .app__body{
+    display: flex;
+    height: 100vh;    
   }
 </style>
